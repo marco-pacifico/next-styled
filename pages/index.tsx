@@ -2,7 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-export default function Home() {
+import { getSortedPostsData } from '../utils/posts';
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Wrapper>
       <Head>
@@ -13,42 +24,20 @@ export default function Home() {
 
       <Main>
         <Title>
-          Financial infrastructure for the internet
+          Blog
         </Title>
 
         <Description>
-          Get started by editing{' '}
-          <Code>pages/index.tsx</Code>
+          This is my blog.
         </Description>
 
         <Grid>
-          <Card href="https://nextjs.org/docs" >
-            <CardTitle>Documentation &rarr;</CardTitle>
-            <CardDescription>Millions of companies of all sizes—from startups to Fortune 500s—use Stripe’s software and APIs to accept payments, send payouts, and manage their businesses online.</CardDescription>
-          </Card>
-
-          <Card href="https://nextjs.org/learn">
-            <CardTitle>Learn &rarr;</CardTitle>
-            <CardDescription>Learn about Next.js in an interactive course with quizzes!</CardDescription>
-          </Card>
-
-          <Card
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-          >
-            <CardTitle>Examples &rarr;</CardTitle>
-            <CardDescription>Discover and deploy boilerplate example Next.js projects.</CardDescription>
-          </Card>
-
-          <Card
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <CardTitle>Deploy &rarr;</CardTitle>
-            <CardDescription>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </CardDescription>
-          </Card>
+          {allPostsData.map(({ id, title, description }) => (
+            <Card key={id}>
+                <CardTitle>{title}</CardTitle>
+                <CardDescription>{description}</CardDescription>
+            </Card>
+          ))}
         </Grid>
       </Main>
 
@@ -129,7 +118,8 @@ const Grid = styled.div`
     flex-direction: column;
   }
 `
-const Card = styled.a`
+const Card = styled.li`
+  list-style: none;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
