@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styled from 'styled-components'
+import Link from 'next/link';
+
 
 import { getSortedPostsData } from '../utils/posts';
 
@@ -12,6 +14,7 @@ export async function getStaticProps() {
     },
   };
 }
+
 
 export default function Home({
   allPostsData
@@ -40,11 +43,27 @@ export default function Home({
         </Description>
 
         <Grid>
+          
+            <Card>
+              <StyledImage
+                src="/images/2017-hero.png" // Route of the image file
+                fill
+                alt="mountain at sunrise"
+              />  
+            </Card>
+         
           {allPostsData.map(({ id, title, description }) => (
-            <Card key={id}>
+            <Link key={id} href={`/posts/${id}`}>
+              <Card>
+                <StyledImage
+                  src="/images/2017-hero.png" // Route of the image file
+                  fill
+                  alt="mountain at sunrise"
+                />  
                 <CardTitle>{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </Grid>
       </Main>
@@ -116,7 +135,7 @@ const Code = styled.code`
 `
 const Grid = styled.div`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
@@ -126,7 +145,10 @@ const Grid = styled.div`
     flex-direction: column;
   }
 `
-const Card = styled.li`
+const Card = styled.div`
+  flex: 1;
+  position: relative;
+  overflow: hidden;
   list-style: none;
   margin: 1rem;
   padding: 1.5rem;
@@ -189,4 +211,9 @@ const Footer = styled.footer`
   @media (prefers-color-scheme: dark) {
     border-color: #222;
   }
+`
+
+const StyledImage = styled(Image)`
+  object-fit: cover;
+
 `
