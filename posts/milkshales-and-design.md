@@ -5,6 +5,8 @@ category: Blog Post
 description: What a lecture about milkshakes taught me about design 
 ---
 
+![user types](/public/images/2017-hero.png)
+
 I can pinpoint the moment I realized I wanted to be a designer. It was in grad school, when I watched Clay Christensen’s lecture on milkshakes. 
 
 The lessons in that lecture changed how I looked at the world and shaped how I’ve thought about design ever since. 

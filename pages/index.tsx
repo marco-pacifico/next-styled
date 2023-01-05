@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link';
-
+import cardPhoto from '../public/images/2017-hero.png'
 
 import { getSortedPostsData } from '../utils/posts';
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -44,22 +45,18 @@ export default function Home({
 
         <Grid>
           
-            <Card>
-              <StyledImage
-                src="/images/2017-hero.png" // Route of the image file
-                fill
-                alt="mountain at sunrise"
-              />  
-            </Card>
          
           {allPostsData.map(({ id, title, description }) => (
             <Link key={id} href={`/posts/${id}`}>
               <Card>
-                <StyledImage
-                  src="/images/2017-hero.png" // Route of the image file
-                  fill
-                  alt="mountain at sunrise"
-                />  
+                  <StyledImage
+                    src={cardPhoto} // Route of the image file
+                    alt="mountain at sunrise"
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                  />  
+                
                 <CardTitle>{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>
               </Card>
@@ -146,9 +143,10 @@ const Grid = styled.div`
   }
 `
 const Card = styled.div`
-  flex: 1;
-  position: relative;
   overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 1rem;
   padding: 1.5rem;
@@ -213,7 +211,19 @@ const Footer = styled.footer`
   }
 `
 
+const ImageWrapper = styled.div`
+  position: relative;
+  flex: 1 1 200px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 8px;
+`
 const StyledImage = styled(Image)`
   object-fit: cover;
-
+  display: block;
+  width: 100%;
+  height: auto;
 `
+
+
