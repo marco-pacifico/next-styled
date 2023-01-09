@@ -44,7 +44,13 @@ export default function Home({
         </Description>
 
         <Grid>
-          
+        <Link href={`/about`}>
+              <Card>
+                
+                <CardTitle>About</CardTitle>
+                <CardDescription>A bit about me</CardDescription>
+              </Card>
+            </Link>
          
           {allPostsData.map(({ id, title, description }) => (
             <Link key={id} href={`/posts/${id}`}>
