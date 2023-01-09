@@ -85,6 +85,22 @@ const GlobalStyles = createGlobalStyle`
         background: black;
     }
     }
+
+    img {
+        /* max-width: 500px; */
+        width: 100%;
+        height: auto;
+        /* aspect-ratio: 3 / 2; */
+    }
+
+    em > img {
+        max-width: 500px;
+        object-fit: cover;
+
+    }
+
+    .right img { float: right; }
+
 `
 
 export default GlobalStyles
