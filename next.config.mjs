@@ -1,19 +1,17 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-//   swcMinify: true,
-// }
+// const remarkFrontmatter = require('remark-frontmatter')
+// const remarkMdxFrontmatter = require('remark-mdx-frontmatter')
+import mdx from '@next/mdx';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
-// module.exports = nextConfig
-
-
-const withMDX = require('@next/mdx')({
+// const withMDX = require('@next/mdx')({
+const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
     // If you use remark-gfm, you'll need to use next.config.mjs
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
+    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     providerImportSource: "@mdx-js/react",
@@ -30,4 +28,8 @@ const nextConfig = {
 }
 
 // Merge MDX config with Next.js config
-module.exports = withMDX(nextConfig)
+
+// module.exports = withMDX(nextConfig)
+export default withMDX({
+  ...nextConfig,
+});
