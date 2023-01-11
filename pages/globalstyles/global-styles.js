@@ -90,7 +90,8 @@ const GlobalStyles = createGlobalStyle`
         /* max-width: 500px;  */
         width: 100%;
         height: auto;
-        aspect-ratio: 3 / 2;
+        /* aspect-ratio: 3 / 2; */
+
     }
 
     em > img {

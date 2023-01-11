@@ -1,20 +1,30 @@
-// import Image from "next/image"
-// import styled from "styled-components"
+import Image from "next/image"
+import styled from "styled-components"
+import { H1 } from "./Typography"
 
-// const ResponsiveImage = (props) => (
-//     <Image fill alt={props.alt} {...props} />
-//   )
+const ResponsiveImage = (props) => (
+    <ImageWrapper {...props}>
+        <Image fill alt={props.alt} {...props} />
+    </ImageWrapper>
+  )
+
 
 const MDXComponents = {
-    p: (props) => <p style={ {color:"red"} } { ...props }/>,
-
+    img: ResponsiveImage,
+    h1: H1,
 }
 
 export default MDXComponents
 
-// const ImageWrapper = styled.div`
-//     width: 100%;
-//     height: auto;
-//     position: relative;
+const ImageWrapper = styled.span`
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    position: relative;
 
-// `
+    & img {
+        object-fit: cover;
+    }
+`
+
+
