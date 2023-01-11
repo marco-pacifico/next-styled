@@ -1,3 +1,4 @@
+import BlogLayout from '../components/bloglayout'
 import Image from 'next/image'
 import mountainsunrise from '../public/images/2017-hero.png'
 import Button from '/components/Button.js'
@@ -64,3 +65,5 @@ I coded this site using React and Styled Components. I use Gatsby to generate st
 It might be over-engineered, but that’s ok. Making this site helps me learn and practice using technologies I encounter in my role as product designer. And I enjoy making it. 
 
 I’m using two typefaces by Klim Foundry: United Sans and Untitled Serif. I love all Klim’s work, but I feel a personal connection to the perfectly minimal style of Untitled. 
+
+export default ({ children }) => <BlogLayout>{children}</BlogLayout>

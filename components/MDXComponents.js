@@ -1,6 +1,7 @@
 import Image from "next/image"
 import styled from "styled-components"
 import { H1 } from "./Typography"
+import BlogLayout from "./bloglayout"
 
 const ResponsiveImage = (props) => (
     <ImageWrapper {...props}>
@@ -12,6 +13,7 @@ const ResponsiveImage = (props) => (
 const MDXComponents = {
     img: ResponsiveImage,
     h1: H1,
+    wrapper: BlogLayout,
 }
 
 export default MDXComponents
