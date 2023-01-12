@@ -13,7 +13,7 @@ const ResponsiveImage = (props) => (
 const MDXComponents = {
     img: ResponsiveImage,
     h1: H1,
-    wrapper: BlogLayout,
+    wrapper:(props) => <BlogLayout {...props}/>,
 }
 
 export default MDXComponents
