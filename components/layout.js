@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 export default function Layout({ children }) {
     return (
+        <>
         <Wrapper>
             <Head>
                 <title>Testing Testing</title>
@@ -12,8 +13,9 @@ export default function Layout({ children }) {
             <Main>
                 {children}
             </Main>
-            <Footer></Footer>
         </Wrapper>
+        <Footer></Footer>
+        </>
     )
 }
 

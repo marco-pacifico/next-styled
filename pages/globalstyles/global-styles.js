@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { COLORS } from '../../components/theme'
 
 
 const GlobalStyles = createGlobalStyle`
@@ -67,6 +68,22 @@ const GlobalStyles = createGlobalStyle`
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
 
+    html {
+        --color-text-primary: hsl(${COLORS.black});
+        --color-text-secondary: hsl(${COLORS.gray[300]});
+        --color-background: hsl(${COLORS.white});
+        
+        color: var(--color-text-primary);
+        background: var(--color-background);
+
+        @media (prefers-color-scheme: dark) {
+            /* color-scheme: dark; */
+            --color-text-primary: hsl(${COLORS.white});
+            --color-text-secondary: hsl(${COLORS.gray[400]});
+            --color-background: hsl(${COLORS.black});
+        }
+    }
+
     a {
     color: inherit;
     text-decoration: none;
@@ -76,15 +93,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     }
 
-    @media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-    body {
-        color: white;
-        background: black;
-    }
-    }
+    /* @media (prefers-color-scheme: dark) {
+        html {
+            color-scheme: dark;
+        }
+        body {
+            color: white;
+            background: black;
+        }
+    } */
 
     img {
         /* max-width: 500px;  */
