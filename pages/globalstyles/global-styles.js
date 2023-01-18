@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { COLORS } from '../../components/theme'
+import { DarkTheme, LightTheme } from '../../components/theme'
 
 
 const GlobalStyles = createGlobalStyle`
@@ -69,20 +69,29 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        --color-text-primary: hsl(${COLORS.black});
-        --color-text-secondary: hsl(${COLORS.gray[300]});
-        --color-background: hsl(${COLORS.white});
-        
+  
+        ${LightTheme}
+
         color: var(--color-text-primary);
         background: var(--color-background);
 
         @media (prefers-color-scheme: dark) {
-            /* color-scheme: dark; */
-            --color-text-primary: hsl(${COLORS.white});
-            --color-text-secondary: hsl(${COLORS.gray[400]});
-            --color-background: hsl(${COLORS.black});
+            color-scheme: dark;
+            ${DarkTheme}
         }
+
+        &[data-theme="light"]{
+            color-scheme: light;
+            ${LightTheme}
+        }
+
+        &[data-theme="dark"]{
+            color-scheme: dark;
+            ${DarkTheme}
+        }
+
     }
+
 
     a {
     color: inherit;
@@ -93,15 +102,6 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     }
 
-    /* @media (prefers-color-scheme: dark) {
-        html {
-            color-scheme: dark;
-        }
-        body {
-            color: white;
-            background: black;
-        }
-    } */
 
     img {
         /* max-width: 500px;  */

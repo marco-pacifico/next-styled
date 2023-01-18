@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Link from 'next/link';
 import cardPhoto from '../public/images/2017-hero.png'
 import Layout from '../components/layout'
-import { COLORS } from '../components/theme'
 
 import { getSortedPostsData } from '../utils/posts';
 
@@ -117,7 +116,7 @@ const Grid = styled.div`
   }
 `
 const Card = styled.div`
-  --color-border: hsl(${COLORS.gray[100]});
+
   overflow: hidden;
   flex: 1;
   display: flex;
@@ -130,17 +129,13 @@ const Card = styled.div`
   text-decoration: none;
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  /* transition: color 0.15s ease, border-color 0.15s ease; */
   max-width: 360px;
 
   &:hover, :focus, :active {
       color: #0070f3;
       border-color: #0070f3;
     }
-
-  @media (prefers-color-scheme: dark) {
-    --color-border: hsl(${COLORS.gray[500]})
-  }
   
 `
 const CardTitle = styled.h2`
