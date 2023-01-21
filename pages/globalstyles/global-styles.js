@@ -75,7 +75,7 @@ const GlobalStyles = createGlobalStyle`
         color: var(--color-text-primary);
         background: var(--color-background);
 
-        @media (prefers-color-scheme: dark) 
+        @media (prefers-color-scheme: dark) {
             color-scheme: dark;
             ${DarkTheme}
         }
