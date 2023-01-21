@@ -37,7 +37,7 @@ export default function DarkToggle() {
         storedTheme === "dark" ||
         (storedTheme === null && prefersDark)
     
-    // defaultDark ? setDark() : setLight();
+    defaultDark && setDark();
 
     return (
         <label htmlFor="checkbox">
