@@ -14,6 +14,7 @@ export const COLORS = {
 };
 
 export const LightTheme = css`
+    --initial-color-mode: "light";
     --color-text-primary: hsl(${COLORS.black});
     --color-text-secondary: hsl(${COLORS.gray[300]});
     --color-background: hsl(${COLORS.white});
@@ -21,6 +22,7 @@ export const LightTheme = css`
 `
 export const DarkTheme = css`
      /* --color-text-primary: hsl(${COLORS.test}); */
+     --initial-color-mode: "dark";
      --color-text-primary: hsl(${COLORS.white});
      --color-text-secondary: hsl(${COLORS.gray[400]});
      --color-background: hsl(${COLORS.black});
