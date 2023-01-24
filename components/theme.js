@@ -20,7 +20,6 @@ export const LightTheme = css`
     --color-border: hsl(${COLORS.gray[100]});
 `
 export const DarkTheme = css`
-     /* --color-text-primary: hsl(${COLORS.test}); */
      --color-text-primary: hsl(${COLORS.white});
      --color-text-secondary: hsl(${COLORS.gray[400]});
      --color-background: hsl(${COLORS.black});
