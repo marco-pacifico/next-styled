@@ -23,6 +23,7 @@ export default function DarkToggle() {
 
     // Helper function that sets the value of theme and also saves the value to local storage.
     // This way local storage will only be used when checkbox is clicked, not when user changes OS or browser theme preference.
+    // https://www.joshwcomeau.com/react/dark-mode/
     const setAndStoreTheme = (value) => {
 
         // Update the value of theme to the value that's passed in
@@ -44,6 +45,7 @@ export default function DarkToggle() {
 
     // For slow connection speeds, the checkbox will only display once the value of theme is known.
     // Prevents showing the checkbox in an incorrect state i.e. an unchecked checkbox that should actually be checked.
+    // https://www.joshwcomeau.com/react/dark-mode/
     if (!theme) {
         return null;
     }
