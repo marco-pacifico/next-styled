@@ -18,7 +18,8 @@ export default function DarkToggle() {
         // Listen for a change in OS or browser theme preference and setTheme if it changes.
         // If a user changes theme after site loads, the checkbox state will update.
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        mediaQuery.onchange = () => {setTheme(getPreferredTheme)} 
+        mediaQuery.onchange = () => {setTheme(getPreferredTheme)};
+        
     },[]);
 
     // Helper function that sets the value of theme and also saves the value to local storage.
@@ -71,6 +72,7 @@ function getPreferredTheme() {
     const storedTheme = localStorage.getItem("theme");
     // If theme value is not null or undefined, return the a string equal to either "dark" or "light"
     if (storedTheme) {
+        document.documentElement.setAttribute("data-theme",storedTheme);
         return storedTheme;
     }
 
