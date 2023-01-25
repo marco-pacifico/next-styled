@@ -70,9 +70,11 @@ function getPreferredTheme() {
 
     // Check if there is a theme value is stored in local storage
     const storedTheme = localStorage.getItem("theme");
-    // If theme value is not null or undefined, return the a string equal to either "dark" or "light"
+    // If theme value is not null or undefined, return a string equal to either "dark" or "light"
     if (storedTheme) {
+        // This ensures that on refresh or next visit, data-theme attribute will be applied rather than prefers-color-scheme media query in global styles
         document.documentElement.setAttribute("data-theme",storedTheme);
+        // Return the stored theme: a string equal to either "dark" or "light"
         return storedTheme;
     }
 

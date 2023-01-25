@@ -102,6 +102,9 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     }
 
+    h1, h2, h3 {
+        font-weight: 500;
+    }
 
     img {
         /* max-width: 500px;  */
