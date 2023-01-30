@@ -1,0 +1,1 @@
+export { default } from './milkshakes-and-design.mdx';

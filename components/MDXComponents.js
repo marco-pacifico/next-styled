@@ -27,6 +27,10 @@ const ImageWrapper = styled.span`
     & img {
         object-fit: cover;
     }
+
+    em & {
+        max-width: 200px;
+    }
 `
 
 

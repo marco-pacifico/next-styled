@@ -62,10 +62,10 @@ const GlobalStyles = createGlobalStyle`
  
     html,
     body {
-    padding: 0;
-    margin: 0;
-    font-family:'sohne', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        padding: 0;
+        margin: 0;
+        font-family:'sohne', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
 
     html {
@@ -115,7 +115,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     em > img {
-        max-width: 500px;
+        max-width: 200px;
         object-fit: cover;
     }
 

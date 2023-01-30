@@ -2,10 +2,8 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link';
 import cardPhoto from '../public/images/2017-hero.png'
-import Layout from '../components/layout'
 
 import { getSortedPostsData } from '../utils/posts';
-
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,7 +13,6 @@ export async function getStaticProps() {
     },
   };
 }
-
 
 export default function Home({
   allPostsData
@@ -27,7 +24,8 @@ export default function Home({
   }[]
 }) {
   return (
-    <Layout>
+    <>
+    
         <Title>
           Blog
         </Title>
@@ -62,7 +60,7 @@ export default function Home({
           ))}
 
         </Grid>
-    </Layout>
+    </>       
   )
 }
 

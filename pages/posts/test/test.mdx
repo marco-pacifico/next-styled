@@ -1,0 +1,25 @@
+---
+title: This is a test
+slug: test
+---
+import Image from 'next/image'
+import mountainsunrise from './2017-hero.png'
+import Head from "next/head";
+
+
+<Head>
+    <title>{`${meta.title} | Marco Pacifico`}</title>
+    <meta property="og:title" content="My page title" key="title" />
+</Head>
+          
+
+# {meta.title}
+<Image
+    src={mountainsunrise}
+    alt="mountain at sunrise"
+/>
+
+![mountain at sunrise](/images/2017-hero.png)
+*![mountain at sunrise](/images/2017-hero.png)*
+
+
